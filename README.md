@@ -11,3 +11,9 @@ Steps:
     - Right click over this class 
     - Execute "Run TestRunner"
     - Report will be located in build/cucumber-report/cucumber.html
+
+Issues detected: 
+-
+- Results are not being sorted according to the criteria selected in the Order option
+
+- - Test can not validate whether or no test were sorted due I couldnt find a way how should this value should be rendered once they get sorted
