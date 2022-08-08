@@ -16,4 +16,4 @@ Issues detected:
 -
 - Results are not being sorted according to the criteria selected in the Order option
 
-- - Test can not validate whether or no test were sorted due I couldnt find a way how should this value should be rendered once they get sorted
+- - Test can not validate whether or no test were sorted due I couldnt find a way how should values be rendered once they get sorted
