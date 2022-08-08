@@ -11,7 +11,7 @@ import general.Setup;
 import java.util.List;
 
 // page_url = about:blank
-public abstract class PageObject {
+public class PageObject {
     // No page elements added
     private WebDriver driver;
     protected String urlpath = "";
@@ -128,9 +128,6 @@ public abstract class PageObject {
     public void checkElementVisibility(By by) {
         this.getElement(by).isDisplayed();
     }
-
-
-    public abstract void validateElements();
 
 
 }

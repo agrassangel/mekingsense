@@ -4,12 +4,12 @@ package general;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import org.json.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,6 +37,7 @@ public final class Setup {
      */
     public void InitSetup() {
         loadDefaultProperties();
+        readCountryInfo();
         timeouts = new HashMap<String, Object>();
         timeouts.put("implicit", 30000);
         timeouts.put("pageLoad", 5000000);
@@ -140,9 +141,8 @@ public final class Setup {
         //waitingObject.waitForLoading(3600);
     }
 
-//    @After
+    @After
     public void close() {
-        Setup.getWait().thread(3000);
         driver.close();
     }
 
@@ -168,5 +168,22 @@ public final class Setup {
 
     public static void setJsExecutor(JavascriptExecutor jsExecutor) {
         Setup.jsExecutor = jsExecutor;
+    }
+
+
+    public static void readCountryInfo() {
+        JSONTokener jsonToken = null;
+        try {
+            jsonToken = new JSONTokener(new FileReader("src/main/resources/countries.json"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        JSONArray jsonArray = new JSONArray(jsonToken);
+//        System.out.println(jsonArray.toString());
+//        JSONObject v = jsonArray.getJSONObject(0);
+//        System.out.println(v.get("country"));
+        setKeyValueStore("countryInfo", jsonArray);
+
+
     }
 }
