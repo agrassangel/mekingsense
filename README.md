@@ -3,7 +3,7 @@
 Project 
 Execute test using command: mvn verify
 
-2- If can not execute the test with command above set you ID to run the TestRunner class test 
+2- If can not execute the test with command above set you IDE to run the TestRunner class test 
 
 Steps: 
 
@@ -14,6 +14,6 @@ Steps:
 
 Issues detected: 
 -
-- Results are not being sorted according to the criteria selected in the Order option
+- Results are not being sorted according to the criteria selected in the Order option by Mercado Libre
 
 - - Test can not validate whether or no test were sorted due I couldnt find a way how should values be rendered once they get sorted
